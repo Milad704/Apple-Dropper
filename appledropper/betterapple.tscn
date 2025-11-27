@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://d1qx6pu4eayp2"]
+
+[ext_resource type="Script" uid="uid://cpv8f5kdccyej" path="res://betterbasket.gd" id="1_be4px"]
+[ext_resource type="Texture2D" uid="uid://by7ainh8na04c" path="res://wicker-basket.png" id="1_exvoq"]
+[ext_resource type="Texture2D" uid="uid://78nsp2tvr1u3" path="res://apple.png" id="2_b4su3"]
+[ext_resource type="Script" uid="uid://ds11hxcefhskl" path="res://betterapple.gd" id="3_ef0tj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_be4px"]
+size = Vector2(36, 39)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ef0tj"]
+radius = 9.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Basket" type="Area2D" parent="."]
+position = Vector2(536, 566)
+script = ExtResource("1_be4px")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Basket"]
+position = Vector2(-2.9999847, -3)
+scale = Vector2(0.07031251, 0.07421876)
+texture = ExtResource("1_exvoq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Basket"]
+position = Vector2(-4, -3)
+shape = SubResource("RectangleShape2D_be4px")
+
+[node name="Apple" type="CharacterBody2D" parent="."]
+position = Vector2(561, 55)
+script = ExtResource("3_ef0tj")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Apple"]
+shape = SubResource("CircleShape2D_ef0tj")
+
+[node name="Sprite2D" type="Sprite2D" parent="Apple"]
+position = Vector2(0.50000024, -1.1920929e-07)
+scale = Vector2(0.037109375, 0.03515625)
+texture = ExtResource("2_b4su3")
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 859.0
+offset_top = 13.0
+offset_right = 1056.0
+offset_bottom = 105.0
+theme_override_font_sizes/font_size = 67
+text = "Score:"
+
+[connection signal="body_entered" from="Basket" to="Basket" method="_on_body_entered"]
