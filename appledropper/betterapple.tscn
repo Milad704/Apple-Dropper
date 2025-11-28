@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d1qx6pu4eayp2"]
+[gd_scene load_steps=8 format=3 uid="uid://d1qx6pu4eayp2"]
 
 [ext_resource type="Script" uid="uid://cpv8f5kdccyej" path="res://betterbasket.gd" id="1_be4px"]
 [ext_resource type="Texture2D" uid="uid://by7ainh8na04c" path="res://wicker-basket.png" id="1_exvoq"]
@@ -11,10 +11,13 @@ size = Vector2(36, 39)
 [sub_resource type="CircleShape2D" id="CircleShape2D_ef0tj"]
 radius = 9.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ef0tj"]
+size = Vector2(1155, 20)
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Basket" type="Area2D" parent="."]
-position = Vector2(536, 566)
+position = Vector2(529, 627)
 script = ExtResource("1_be4px")
 metadata/_edit_group_ = true
 
@@ -46,6 +49,23 @@ offset_top = 13.0
 offset_right = 1056.0
 offset_bottom = 105.0
 theme_override_font_sizes/font_size = 67
-text = "Score:"
+text = "Score: 0"
+
+[node name="HPLabel" type="Label" parent="."]
+offset_left = 73.0
+offset_top = 42.0
+offset_right = 188.0
+offset_bottom = 86.0
+theme_override_font_sizes/font_size = 60
+text = "Health: 3"
+
+[node name="Floor" type="Area2D" parent="."]
+position = Vector2(518, 659)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(54.5, 0)
+shape = SubResource("RectangleShape2D_ef0tj")
 
 [connection signal="body_entered" from="Basket" to="Basket" method="_on_body_entered"]
+[connection signal="body_entered" from="Floor" to="Apple" method="_on_floor_body_entered"]
