@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://d1qx6pu4eayp2"]
+[gd_scene load_steps=10 format=3 uid="uid://d1qx6pu4eayp2"]
 
 [ext_resource type="Script" uid="uid://cpv8f5kdccyej" path="res://betterbasket.gd" id="1_be4px"]
 [ext_resource type="Texture2D" uid="uid://by7ainh8na04c" path="res://wicker-basket.png" id="1_exvoq"]
 [ext_resource type="Texture2D" uid="uid://78nsp2tvr1u3" path="res://apple.png" id="2_b4su3"]
 [ext_resource type="Script" uid="uid://ds11hxcefhskl" path="res://betterapple.gd" id="3_ef0tj"]
+[ext_resource type="AudioStream" uid="uid://do1vhw742nq7l" path="res://funky_chiptune.ogg" id="5_ef0tj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_be4px"]
 size = Vector2(36, 39)
@@ -78,6 +79,10 @@ metadata/_edit_group_ = true
 shape = SubResource("RectangleShape2D_scsih")
 
 [node name="Sprite2D" type="Sprite2D" parent="HPpower"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_ef0tj")
+autoplay = true
 
 [connection signal="body_entered" from="Basket" to="Basket" method="_on_body_entered"]
 [connection signal="body_entered" from="Floor" to="Apple" method="_on_floor_body_entered"]
