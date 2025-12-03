@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://d1qx6pu4eayp2"]
+[gd_scene load_steps=11 format=3 uid="uid://d1qx6pu4eayp2"]
 
 [ext_resource type="Script" uid="uid://cpv8f5kdccyej" path="res://betterbasket.gd" id="1_be4px"]
 [ext_resource type="Texture2D" uid="uid://by7ainh8na04c" path="res://wicker-basket.png" id="1_exvoq"]
@@ -6,13 +6,12 @@
 [ext_resource type="Script" uid="uid://ds11hxcefhskl" path="res://betterapple.gd" id="3_ef0tj"]
 [ext_resource type="Script" uid="uid://blt22idvevcsg" path="res://goldenapple.gd" id="3_scsih"]
 [ext_resource type="Texture2D" uid="uid://cs574ewwcc8he" path="res://icons8-minecraft-golden-apple-96.png" id="4_xxvis"]
-[ext_resource type="Script" uid="uid://oahvo3umfr5a" path="res://hp_label.gd" id="7_xxvis"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_be4px"]
 size = Vector2(36, 39)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sxw4r"]
-radius = 12.0
+radius = 8.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ef0tj"]
 radius = 9.0
@@ -44,12 +43,12 @@ collision_mask = 3
 script = ExtResource("3_scsih")
 
 [node name="Sprite2D" type="Sprite2D" parent="goldenapple"]
-position = Vector2(9.249994, -8.500002)
-scale = Vector2(0.28645825, 0.28125003)
+position = Vector2(5.2499948, -3.5000007)
+scale = Vector2(0.20312488, 0.17708334)
 texture = ExtResource("4_xxvis")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="goldenapple"]
-position = Vector2(9, -8)
+position = Vector2(5, -4)
 shape = SubResource("CircleShape2D_sxw4r")
 
 [node name="Apple" type="CharacterBody2D" parent="."]
@@ -81,7 +80,6 @@ offset_right = 348.0
 offset_bottom = 104.0
 theme_override_font_sizes/font_size = 60
 text = "Health: 3"
-script = ExtResource("7_xxvis")
 metadata/_edit_use_anchors_ = true
 
 [node name="Floor" type="Area2D" parent="."]

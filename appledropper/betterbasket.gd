@@ -1,7 +1,7 @@
 extends Area2D
-@onready var unRefresh = get_node("/root/Node2D/Apple")
-var refresh = false
-var score = 0
+
+
+#var score = 0
 var score_label 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,10 +20,7 @@ func _process(delta):
 
 func _on_body_entered(body):
 	print("i am being touched");
-	score += 1
-	score_label.text = "Score:" + str(score)
-	refresh = true
-	if unRefresh.unRefresh == true:
-		refresh = false
+	Global.score += 1
+	score_label.text = "Score:" + str(Global.score)
 
 	pass # Replace with function body.
