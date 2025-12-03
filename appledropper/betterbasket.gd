@@ -1,6 +1,7 @@
 extends Area2D
 
-var score = 0
+
+#var score = 0
 var score_label 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,13 +15,12 @@ func _process(delta):
 		position.x -= 8
 	elif Input.is_key_pressed(KEY_RIGHT):
 		position.x += 8
-	
-
 	pass
 
 
 func _on_body_entered(body):
 	print("i am being touched");
-	score += 1
-	score_label.text = "Score:" + str(score)
+	Global.score += 1
+	score_label.text = "Score:" + str(Global.score)
+
 	pass # Replace with function body.
