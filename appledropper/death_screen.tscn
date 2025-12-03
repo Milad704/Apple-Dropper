@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxdoybl0wq511"]
+
+[ext_resource type="Script" uid="uid://c56pvqxp5rqst" path="res://death_screen.gd" id="1_6bi5g"]
+[ext_resource type="Texture2D" uid="uid://dpb4e5v0r80pg" path="res://Black.jpg" id="1_ex68u"]
+[ext_resource type="FontFile" uid="uid://54c7uql008a4" path="res://Party Vibes.otf" id="2_6bi5g"]
+
+[node name="Deathscreen" type="Node2D"]
+script = ExtResource("1_6bi5g")
+
+[node name="Bg" type="Sprite2D" parent="."]
+position = Vector2(573, 325.5)
+scale = Vector2(3.807947, 3.8862274)
+texture = ExtResource("1_ex68u")
+
+[node name="You died" type="Label" parent="."]
+offset_left = 274.0
+offset_top = 41.0
+offset_right = 880.0
+offset_bottom = 253.0
+theme_override_fonts/font = ExtResource("2_6bi5g")
+theme_override_font_sizes/font_size = 150
+text = "YOU DIED!"
+
+[node name="Retry" type="Button" parent="."]
+offset_left = 444.0
+offset_top = 345.0
+offset_right = 730.0
+offset_bottom = 494.0
+theme_override_font_sizes/font_size = 70
+text = "RETRY?"
+
+[connection signal="button_down" from="Retry" to="." method="_on_retry_button_down"]

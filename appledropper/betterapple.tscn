@@ -7,6 +7,8 @@
 [ext_resource type="Script" uid="uid://blt22idvevcsg" path="res://goldenapple.gd" id="3_scsih"]
 [ext_resource type="Texture2D" uid="uid://cs574ewwcc8he" path="res://icons8-minecraft-golden-apple-96.png" id="4_xxvis"]
 [ext_resource type="Script" uid="uid://oahvo3umfr5a" path="res://hp_label.gd" id="7_xxvis"]
+[ext_resource type="AudioStream" uid="uid://do1vhw742nq7l" path="res://funky_chiptune.ogg" id="5_ef0tj"]
+[ext_resource type="Texture2D" uid="uid://bqiedg1nyayid" path="res://favpng_a9fd9110c6a75084485040168848c7e7.png" id="6_scsih"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_be4px"]
 size = Vector2(36, 39)
@@ -19,6 +21,11 @@ radius = 9.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ef0tj"]
 size = Vector2(1155, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_scsih"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xxvis"]
+radius = 1373.1049
 
 [node name="Node2D" type="Node2D"]
 
@@ -91,6 +98,30 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 position = Vector2(54.5, 0)
 shape = SubResource("RectangleShape2D_ef0tj")
+
+[node name="HPpower" type="Area2D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HPpower"]
+shape = SubResource("RectangleShape2D_scsih")
+
+[node name="Sprite2D" type="Sprite2D" parent="HPpower"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_ef0tj")
+autoplay = true
+
+[node name="frozen apple" type="CharacterBody2D" parent="."]
+position = Vector2(486.00003, 54)
+scale = Vector2(0.0058953697, 0.005622368)
+
+[node name="Sprite2D" type="Sprite2D" parent="frozen apple"]
+position = Vector2(1, 5)
+texture = ExtResource("6_scsih")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="frozen apple"]
+position = Vector2(-81, 269)
+shape = SubResource("CircleShape2D_xxvis")
 
 [connection signal="body_entered" from="Basket" to="Basket" method="_on_body_entered"]
 [connection signal="body_entered" from="Basket" to="goldenapple" method="_on_basket_body_entered"]
