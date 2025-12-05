@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://d1qx6pu4eayp2"]
+[gd_scene load_steps=16 format=3 uid="uid://d1qx6pu4eayp2"]
 
 [ext_resource type="Script" uid="uid://cpv8f5kdccyej" path="res://betterbasket.gd" id="1_be4px"]
 [ext_resource type="Texture2D" uid="uid://by7ainh8na04c" path="res://wicker-basket.png" id="1_exvoq"]
@@ -6,9 +6,9 @@
 [ext_resource type="Script" uid="uid://ds11hxcefhskl" path="res://betterapple.gd" id="3_ef0tj"]
 [ext_resource type="Script" uid="uid://blt22idvevcsg" path="res://goldenapple.gd" id="3_scsih"]
 [ext_resource type="Texture2D" uid="uid://cs574ewwcc8he" path="res://icons8-minecraft-golden-apple-96.png" id="4_xxvis"]
-[ext_resource type="Script" uid="uid://oahvo3umfr5a" path="res://hp_label.gd" id="7_xxvis"]
 [ext_resource type="AudioStream" uid="uid://do1vhw742nq7l" path="res://funky_chiptune.ogg" id="5_ef0tj"]
 [ext_resource type="Texture2D" uid="uid://bqiedg1nyayid" path="res://favpng_a9fd9110c6a75084485040168848c7e7.png" id="6_scsih"]
+[ext_resource type="Script" uid="uid://oahvo3umfr5a" path="res://hp_label.gd" id="7_xxvis"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_be4px"]
 size = Vector2(36, 39)
@@ -45,10 +45,11 @@ position = Vector2(-4, -3)
 shape = SubResource("RectangleShape2D_be4px")
 
 [node name="goldenapple" type="CharacterBody2D" parent="."]
-position = Vector2(590, 56)
+position = Vector2(591, 64)
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("3_scsih")
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="goldenapple"]
 position = Vector2(9.249994, -8.500002)
@@ -56,7 +57,7 @@ scale = Vector2(0.28645825, 0.28125003)
 texture = ExtResource("4_xxvis")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="goldenapple"]
-position = Vector2(9, -8)
+position = Vector2(9, -9)
 shape = SubResource("CircleShape2D_sxw4r")
 
 [node name="Apple" type="CharacterBody2D" parent="."]
