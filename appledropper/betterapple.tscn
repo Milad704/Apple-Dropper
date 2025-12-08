@@ -1,8 +1,5 @@
-<<<<<<< HEAD
+
 [gd_scene load_steps=20 format=3 uid="uid://d1qx6pu4eayp2"]
-=======
-[gd_scene load_steps=17 format=3 uid="uid://d1qx6pu4eayp2"]
->>>>>>> a5d4226fbc0584360fca286a6f338a5458062482
 
 [ext_resource type="Script" uid="uid://cpv8f5kdccyej" path="res://betterbasket.gd" id="1_be4px"]
 [ext_resource type="Texture2D" uid="uid://by7ainh8na04c" path="res://wicker-basket.png" id="1_exvoq"]
@@ -12,14 +9,11 @@
 [ext_resource type="Texture2D" uid="uid://cs574ewwcc8he" path="res://icons8-minecraft-golden-apple-96.png" id="4_xxvis"]
 [ext_resource type="AudioStream" uid="uid://do1vhw742nq7l" path="res://funky_chiptune.ogg" id="5_ef0tj"]
 [ext_resource type="Texture2D" uid="uid://bqiedg1nyayid" path="res://favpng_a9fd9110c6a75084485040168848c7e7.png" id="6_scsih"]
-<<<<<<< HEAD
 [ext_resource type="Script" uid="uid://oahvo3umfr5a" path="res://hp_label.gd" id="7_xxvis"]
 [ext_resource type="Script" uid="uid://bmawsyqao4exl" path="res://obstacle.gd" id="10_rmopt"]
 [ext_resource type="Texture2D" uid="uid://ydjrryoru213" path="res://snowflake.png" id="11_rmopt"]
-=======
 [ext_resource type="Script" path="res://hp_label.gd" id="7_xxvis"]
 [ext_resource type="Texture2D" uid="uid://bsdbe5qdxdjcx" path="res://0359dd78-47bd-434b-8e5a-66c6e8b09c38.png" id="10_ypymp"]
->>>>>>> a5d4226fbc0584360fca286a6f338a5458062482
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_be4px"]
 size = Vector2(36, 39)
