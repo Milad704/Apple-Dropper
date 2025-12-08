@@ -1,7 +1,7 @@
 extends CharacterBody2D
 #@onready var Apple = get_node("/root/Node2D/Basket")
 func _ready():
-
+	
 	velocity = Vector2(0, 300)
 	
 func _physics_process(delta:float) -> void:
@@ -20,6 +20,7 @@ func _physics_process(delta:float) -> void:
 func _on_floor_body_entered(body):
 	Global.health -= 1
 	if Global.health < 1:
+		Global.score = 0
 		get_tree().change_scene_to_file("res://betterapple.tscn")
 		Global.health = 3
 	#Global.health_label.text = "Health:" + str(Global.health)
@@ -27,6 +28,8 @@ func _on_floor_body_entered(body):
 
 
 func _on_basket_body_entered(body):
-	position.x = randi_range(0, 1100)
-	position.y = 0
+	var obstacle = get_node("/root/Node2D/Obstacle") 
+	if body != obstacle:
+		position.x = randi_range(0, 1100)
+		position.y = 0
 	pass # Replace with function body.
