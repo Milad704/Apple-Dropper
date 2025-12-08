@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://d1qx6pu4eayp2"]
+[gd_scene load_steps=20 format=3 uid="uid://d1qx6pu4eayp2"]
 
 [ext_resource type="Script" uid="uid://cpv8f5kdccyej" path="res://betterbasket.gd" id="1_be4px"]
 [ext_resource type="Texture2D" uid="uid://by7ainh8na04c" path="res://wicker-basket.png" id="1_exvoq"]
@@ -6,9 +6,11 @@
 [ext_resource type="Script" uid="uid://ds11hxcefhskl" path="res://betterapple.gd" id="3_ef0tj"]
 [ext_resource type="Script" uid="uid://blt22idvevcsg" path="res://goldenapple.gd" id="3_scsih"]
 [ext_resource type="Texture2D" uid="uid://cs574ewwcc8he" path="res://icons8-minecraft-golden-apple-96.png" id="4_xxvis"]
-[ext_resource type="Script" uid="uid://oahvo3umfr5a" path="res://hp_label.gd" id="7_xxvis"]
 [ext_resource type="AudioStream" uid="uid://do1vhw742nq7l" path="res://funky_chiptune.ogg" id="5_ef0tj"]
 [ext_resource type="Texture2D" uid="uid://bqiedg1nyayid" path="res://favpng_a9fd9110c6a75084485040168848c7e7.png" id="6_scsih"]
+[ext_resource type="Script" uid="uid://oahvo3umfr5a" path="res://hp_label.gd" id="7_xxvis"]
+[ext_resource type="Script" uid="uid://bmawsyqao4exl" path="res://obstacle.gd" id="10_rmopt"]
+[ext_resource type="Texture2D" uid="uid://ydjrryoru213" path="res://snowflake.png" id="11_rmopt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_be4px"]
 size = Vector2(36, 39)
@@ -27,11 +29,16 @@ size = Vector2(1155, 20)
 [sub_resource type="CircleShape2D" id="CircleShape2D_xxvis"]
 radius = 1373.1049
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6k68e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ypymp"]
+size = Vector2(39, 38)
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Basket" type="Area2D" parent="."]
 position = Vector2(529, 627)
-collision_mask = 3
+collision_mask = 15
 script = ExtResource("1_be4px")
 metadata/_edit_group_ = true
 
@@ -43,6 +50,8 @@ texture = ExtResource("1_exvoq")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Basket"]
 position = Vector2(-4, -3)
 shape = SubResource("RectangleShape2D_be4px")
+
+[node name="Timer" type="Timer" parent="Basket"]
 
 [node name="goldenapple" type="CharacterBody2D" parent="."]
 position = Vector2(590, 56)
@@ -61,6 +70,7 @@ shape = SubResource("CircleShape2D_sxw4r")
 
 [node name="Apple" type="CharacterBody2D" parent="."]
 position = Vector2(561, 55)
+collision_layer = 4
 script = ExtResource("3_ef0tj")
 metadata/_edit_group_ = true
 
@@ -93,6 +103,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Floor" type="Area2D" parent="."]
 position = Vector2(518, 659)
+collision_mask = 5
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
@@ -123,7 +134,34 @@ texture = ExtResource("6_scsih")
 position = Vector2(-81, 269)
 shape = SubResource("CircleShape2D_xxvis")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_6k68e")
+
+[node name="Obstacle" type="StaticBody2D" parent="."]
+position = Vector2(1247, 208)
+collision_layer = 8
+script = ExtResource("10_rmopt")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle"]
+shape = SubResource("RectangleShape2D_ypymp")
+
+[node name="Sprite2D" type="Sprite2D" parent="Obstacle"]
+scale = Vector2(0.072265625, 0.072265625)
+texture = ExtResource("11_rmopt")
+
+[node name="Timer" type="Timer" parent="Obstacle"]
+wait_time = 5.0
+autostart = true
+
 [connection signal="body_entered" from="Basket" to="Basket" method="_on_body_entered"]
 [connection signal="body_entered" from="Basket" to="goldenapple" method="_on_basket_body_entered"]
 [connection signal="body_entered" from="Basket" to="Apple" method="_on_basket_body_entered"]
+[connection signal="body_exited" from="Basket" to="Basket" method="_on_body_exited"]
+[connection signal="timeout" from="Basket/Timer" to="Basket" method="_on_timer_timeout"]
 [connection signal="body_entered" from="Floor" to="Apple" method="_on_floor_body_entered"]
+[connection signal="timeout" from="Obstacle/Timer" to="Obstacle" method="_on_timer_timeout"]
