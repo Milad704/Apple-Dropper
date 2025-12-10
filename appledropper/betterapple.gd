@@ -21,7 +21,7 @@ func _on_floor_body_entered(body):
 	Global.health -= 1
 	if Global.health < 1:
 		Global.score = 0
-		get_tree().change_scene_to_file("res://betterapple.tscn")
+		get_tree().change_scene_to_file("res://death_screen.tscn")
 		Global.health = 3
 	#Global.health_label.text = "Health:" + str(Global.health)
 	pass # Replace with function body.

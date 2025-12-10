@@ -24,11 +24,13 @@ theme_override_font_sizes/font_size = 150
 text = "Apple Dropper"
 
 [node name="Start" type="Button" parent="."]
-offset_left = 473.0
-offset_top = 390.0
-offset_right = 666.0
-offset_bottom = 483.0
-theme_override_font_sizes/font_size = 39
+offset_left = 427.0
+offset_top = 313.0
+offset_right = 662.0
+offset_bottom = 432.0
+theme_override_colors/font_color = Color(0.8800983, 0.9378123, 1, 1)
+theme_override_fonts/font = ExtResource("2_pevhg")
+theme_override_font_sizes/font_size = 57
 text = "START"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
