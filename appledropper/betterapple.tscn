@@ -14,13 +14,13 @@
 [ext_resource type="Texture2D" uid="uid://ydjrryoru213" path="res://snowflake.png" id="11_rmopt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_be4px"]
-size = Vector2(36, 39)
+size = Vector2(65, 63.5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sxw4r"]
 radius = 25.019993
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ef0tj"]
-radius = 19.0
+radius = 24.020824
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ef0tj"]
 size = Vector2(1155, 20)
@@ -33,27 +33,27 @@ radius = 1373.1049
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6k68e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ypymp"]
-size = Vector2(58.5, 52)
+size = Vector2(78.5, 70)
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Bg" type="Sprite2D" parent="."]
 position = Vector2(599, 359)
 texture = ExtResource("10_ypymp")
+metadata/_edit_group_ = true
 
 [node name="Basket" type="Area2D" parent="."]
 position = Vector2(529, 627)
 collision_mask = 15
 script = ExtResource("1_be4px")
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Basket"]
-position = Vector2(-2.9999847, -3)
-scale = Vector2(0.07031251, 0.07421876)
+position = Vector2(8.500007, -15.13888)
+scale = Vector2(0.11523435, 0.12163626)
 texture = ExtResource("1_exvoq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Basket"]
-position = Vector2(-4, -3)
+position = Vector2(10.5, -15.25)
 shape = SubResource("RectangleShape2D_be4px")
 
 [node name="Timer" type="Timer" parent="Basket"]
@@ -79,11 +79,12 @@ collision_layer = 4
 script = ExtResource("3_ef0tj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Apple"]
+position = Vector2(-5, 3)
 shape = SubResource("CircleShape2D_ef0tj")
 
 [node name="Sprite2D" type="Sprite2D" parent="Apple"]
-position = Vector2(-0.50000477, -0.49999905)
-scale = Vector2(0.07226567, 0.064453125)
+position = Vector2(-3.2500148, 2.263506)
+scale = Vector2(0.09472657, 0.086966805)
 texture = ExtResource("2_b4su3")
 
 [node name="ScoreLabel" type="Label" parent="."]
@@ -152,12 +153,12 @@ collision_layer = 8
 script = ExtResource("10_rmopt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle"]
-position = Vector2(9.75, -7)
+position = Vector2(19.75, -16)
 shape = SubResource("RectangleShape2D_ypymp")
 
 [node name="Sprite2D" type="Sprite2D" parent="Obstacle"]
-position = Vector2(9.749931, -6.749999)
-scale = Vector2(0.110351294, 0.09863281)
+position = Vector2(20.750038, -16.581976)
+scale = Vector2(0.15332046, 0.13703898)
 texture = ExtResource("11_rmopt")
 
 [node name="Timer" type="Timer" parent="Obstacle"]
