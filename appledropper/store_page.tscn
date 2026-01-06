@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://btc5n21nnd780"]
+[gd_scene load_steps=2 format=3 uid="uid://btc5n21nnd780"]
+
+[ext_resource type="Texture2D" uid="uid://dk0pqqbn323nk" path="res://ChatGPT Image Jan 6, 2026, 01_52_21 PM.png" id="1_pdc0t"]
 
 [node name="Store Page" type="Node2D"]
+
+[node name="ChatGptImageJan6,2026,015221Pm" type="Sprite2D" parent="."]
+position = Vector2(577.49994, 331.99997)
+scale = Vector2(0.7545573, 0.6679688)
+texture = ExtResource("1_pdc0t")
