@@ -11,12 +11,14 @@ config_version=5
 [application]
 
 config/name="appledropper"
+run/main_scene="uid://cfa56jkenl5mb"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Global="*res://health.gd"
+SkinManager="*res://SkinManager.gd"
 
 [layer_names]
 

@@ -1,0 +1,118 @@
+[gd_scene load_steps=9 format=3 uid="uid://d2jnplqc0ynq6"]
+
+[ext_resource type="Script" uid="uid://c8e8w7gvlx56n" path="res://control.gd" id="1_myf4l"]
+[ext_resource type="Texture2D" uid="uid://dk0pqqbn323nk" path="res://ChatGPT Image Jan 6, 2026, 01_52_21 PM.png" id="2_p5a0g"]
+[ext_resource type="Texture2D" uid="uid://by7ainh8na04c" path="res://wicker-basket.png" id="3_xqmyw"]
+[ext_resource type="Texture2D" uid="uid://6v3xbu73l1yp" path="res://Basket11.png" id="4_sw5c6"]
+[ext_resource type="Texture2D" uid="uid://dlbetjsc3lxe6" path="res://basket2.png" id="5_msgp6"]
+[ext_resource type="Texture2D" uid="uid://bkuujt5x7osws" path="res://basket6.png" id="6_e23gp"]
+[ext_resource type="Texture2D" uid="uid://ccr4tyc2wglwf" path="res://basket5.png" id="7_rrolr"]
+[ext_resource type="Texture2D" uid="uid://bl66410hembu6" path="res://basket4.png" id="8_gldgk"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_myf4l")
+
+[node name="ChatGptImageJan6,2026,015221Pm" type="Sprite2D" parent="."]
+position = Vector2(575.5, 323)
+scale = Vector2(0.74934894, 0.6328125)
+texture = ExtResource("2_p5a0g")
+
+[node name="Basket_01" type="Button" parent="."]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 300.0
+offset_right = 429.0
+offset_bottom = 346.0
+text = "Pick"
+
+[node name="Basket_02" type="Button" parent="."]
+layout_mode = 0
+offset_left = 524.0
+offset_top = 298.0
+offset_right = 653.0
+offset_bottom = 344.0
+text = "Pick"
+
+[node name="Basket_03" type="Button" parent="."]
+layout_mode = 0
+offset_left = 743.0
+offset_top = 300.0
+offset_right = 872.0
+offset_bottom = 346.0
+text = "Pick"
+
+[node name="Basket_04" type="Button" parent="."]
+layout_mode = 0
+offset_left = 303.0
+offset_top = 505.0
+offset_right = 432.0
+offset_bottom = 551.0
+text = "Pick"
+
+[node name="Basket_05" type="Button" parent="."]
+layout_mode = 0
+offset_left = 522.0
+offset_top = 503.0
+offset_right = 651.0
+offset_bottom = 549.0
+text = "Pick"
+
+[node name="Basket_06" type="Button" parent="."]
+layout_mode = 0
+offset_left = 743.0
+offset_top = 503.0
+offset_right = 872.0
+offset_bottom = 549.0
+text = "Pick"
+
+[node name="WickerBasket" type="Sprite2D" parent="."]
+position = Vector2(360.00003, 220.99997)
+scale = Vector2(0.26171872, 0.23632815)
+texture = ExtResource("3_xqmyw")
+
+[node name="Basket11" type="Sprite2D" parent="."]
+position = Vector2(580.00006, 218)
+scale = Vector2(0.34889483, 0.31015956)
+texture = ExtResource("4_sw5c6")
+
+[node name="Basket2" type="Sprite2D" parent="."]
+position = Vector2(807.99994, 226.00002)
+scale = Vector2(0.39814806, 0.40616447)
+texture = ExtResource("5_msgp6")
+
+[node name="Basket6" type="Sprite2D" parent="."]
+position = Vector2(803, 433)
+scale = Vector2(0.4875, 0.44637224)
+texture = ExtResource("6_e23gp")
+
+[node name="Basket5" type="Sprite2D" parent="."]
+position = Vector2(584, 436)
+scale = Vector2(0.42, 0.44444445)
+texture = ExtResource("7_rrolr")
+
+[node name="Basket4" type="Sprite2D" parent="."]
+position = Vector2(365, 433)
+scale = Vector2(0.48028395, 0.43705034)
+texture = ExtResource("8_gldgk")
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 931.0
+offset_top = 192.0
+offset_right = 1072.0
+offset_bottom = 266.0
+text = "Exit"
+
+[connection signal="pressed" from="Basket_01" to="." method="_on_basket_01_pressed"]
+[connection signal="pressed" from="Basket_02" to="." method="_on_basket_02_pressed"]
+[connection signal="pressed" from="Basket_03" to="." method="_on_basket_03_pressed"]
+[connection signal="pressed" from="Basket_04" to="." method="_on_basket_04_pressed"]
+[connection signal="pressed" from="Basket_05" to="." method="_on_basket_05_pressed"]
+[connection signal="pressed" from="Basket_06" to="." method="_on_basket_06_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

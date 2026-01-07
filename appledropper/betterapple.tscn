@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://d1qx6pu4eayp2"]
+[gd_scene load_steps=19 format=3 uid="uid://d1qx6pu4eayp2"]
 
 [ext_resource type="Script" uid="uid://cpv8f5kdccyej" path="res://betterbasket.gd" id="1_be4px"]
 [ext_resource type="Texture2D" uid="uid://by7ainh8na04c" path="res://wicker-basket.png" id="1_exvoq"]
@@ -7,7 +7,6 @@
 [ext_resource type="Script" uid="uid://blt22idvevcsg" path="res://goldenapple.gd" id="3_scsih"]
 [ext_resource type="Texture2D" uid="uid://cs574ewwcc8he" path="res://icons8-minecraft-golden-apple-96.png" id="4_xxvis"]
 [ext_resource type="AudioStream" uid="uid://do1vhw742nq7l" path="res://funky_chiptune.ogg" id="5_ef0tj"]
-[ext_resource type="Texture2D" uid="uid://bqiedg1nyayid" path="res://favpng_a9fd9110c6a75084485040168848c7e7.png" id="6_scsih"]
 [ext_resource type="Script" uid="uid://oahvo3umfr5a" path="res://hp_label.gd" id="7_xxvis"]
 [ext_resource type="Script" uid="uid://bmawsyqao4exl" path="res://obstacle.gd" id="10_rmopt"]
 [ext_resource type="Texture2D" uid="uid://bsdbe5qdxdjcx" path="res://0359dd78-47bd-434b-8e5a-66c6e8b09c38.png" id="10_ypymp"]
@@ -27,9 +26,6 @@ size = Vector2(1155, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_scsih"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_xxvis"]
-radius = 1373.1049
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6k68e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ypymp"]
@@ -46,6 +42,7 @@ metadata/_edit_group_ = true
 position = Vector2(529, 627)
 collision_mask = 15
 script = ExtResource("1_be4px")
+skin_id = null
 
 [node name="Sprite2D" type="Sprite2D" parent="Basket"]
 position = Vector2(8.500007, -15.13888)
@@ -127,18 +124,6 @@ shape = SubResource("RectangleShape2D_scsih")
 position = Vector2(0, 5)
 stream = ExtResource("5_ef0tj")
 autoplay = true
-
-[node name="frozen apple" type="CharacterBody2D" parent="."]
-position = Vector2(486.00003, 54)
-scale = Vector2(0.0058953697, 0.005622368)
-
-[node name="Sprite2D" type="Sprite2D" parent="frozen apple"]
-position = Vector2(1, 5)
-texture = ExtResource("6_scsih")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="frozen apple"]
-position = Vector2(-81, 269)
-shape = SubResource("CircleShape2D_xxvis")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

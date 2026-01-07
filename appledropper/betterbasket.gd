@@ -1,5 +1,17 @@
 extends Area2D
 
+@onready var sprite: Sprite2D = $Sprite2D
+# set up skins
+const BASKET_TEXTURES := {
+	"basket_01": preload("res://wicker-basket.png"),
+	"basket_02": preload("res://basket11.png"),
+	"basket_03": preload("res://basket2.png"),
+	"basket_04": preload("res://basket3.png"),
+	"basket_05": preload("res://basket4.png"),
+	"basket_06": preload("res://basket6.png"),
+}
+@export var skin_id: String = "basket_01"
+
 var score_label
 var obstacle
 
@@ -15,6 +27,10 @@ var speed = 300
 func _ready():
 	score_label = get_node("/root/Node2D/ScoreLabel")
 	obstacle = get_node("/root/Node2D/Obstacle")  # your obstacle node
+	_apply_skin(SkinManager.basket_skin_id)
+func _apply_skin(id: String) -> void:
+	if BASKET_TEXTURES.has(id):
+		sprite.texture = BASKET_TEXTURES[id]
 
 func _process(delta):
 	if Input.is_key_pressed(KEY_LEFT):
@@ -47,3 +63,5 @@ func _on_body_entered(body):
 func _on_body_exited(body):
 	if body == obstacle:
 		speed = normal_speed   # restore
+		
+		
